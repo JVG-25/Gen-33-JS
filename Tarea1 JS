@@ -1,0 +1,67 @@
+//Dia del mes, modificar de acuerdo al dia
+const diaDelMes = 6;
+
+function diaParOImpar() {
+    const moduloDelDia = diaDelMes % 2;
+    
+    if (moduloDelDia === 0){
+        console.log("el dia es par sube la demanda Carlos");
+    } else{
+        console.log("el dia es impar baja la demanda Carlos");
+
+    }
+}
+
+//monto previsto para ese mismo dia
+const montoPrevisto = 14;
+// crear una variable para guardar ordenes
+const ordenesEfectivas = 13;
+
+
+
+function proyectarCapacidad(){
+    
+    //si las ordenes superan el monto previsto
+if (ordenesEfectivas > montoPrevisto) {
+    console.log("Debes incrementar la capacidad al siguiente dia");
+
+} else if (ordenesEfectivas < montoPrevisto) {
+    console.log("Debes reducir la capacidad al siguiente dia");
+} else {
+    console.log("Bien Carlos")
+}
+}
+
+//llamar la funcion
+proyectarCapacidad()
+
+diaParOImpar()
+
+function demandaDiaPar(){
+
+    
+    if (ordenesEfectivas > montoPrevisto && diaDelMes % 2 === 0){
+        console.log("Toma nota, el dia fue par y la demanda supero a lo hecho");
+    } 
+    else if (ordenesEfectivas < montoPrevisto && diaDelMes % 2 === 0) {
+        console.log("Este dia fue par y no supero la expectativa");
+    }
+    else if (ordenesEfectivas > montoPrevisto && diaDelMes % 2 === 1) {
+        console.log("Este dia era impar, y supero la espectativa");
+    }
+    else if (ordenesEfectivas < montoPrevisto && diaDelMes % 2 === 1) {
+        console.log("Este dia era impar, y no supero lo esperado");
+    }
+    else {
+        console.log();
+    }
+}
+
+demandaDiaPar()
+
+function OrdenesCumplicasdeAcuerdoALoEstimado() {
+    console.log(Math.round((ordenesEfectivas / montoPrevisto * 100)));
+}
+
+OrdenesCumplicasdeAcuerdoALoEstimado();
+   
